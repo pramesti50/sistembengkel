@@ -7,7 +7,7 @@
             <div class="row" id="table-responsive">
                 <div class="col-12">
                     <div class="card-header">
-                        <h6 class="text-muted font-extrabold mb-0">Total Member : {{ $jmlhTeknisi}}</h6>
+                        <h6 class="text-muted font-extrabold mb-0">Total Teknisi : {{ $jmlhTeknisi}}</h6>
                         
                     </div>
                 </div>

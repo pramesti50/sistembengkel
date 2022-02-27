@@ -42,7 +42,13 @@ Route::get('/', function () {
     //DATA TEKNISI KESELURUHAN
         Route::get('/teknisi/dataTeknisi', 'App\Http\Controllers\TeknisiController@indexDataTeknisi');
         Route::patch('/teknisi/dataTeknisi/{dataTeknisi}', 'App\Http\Controllers\TeknisiController@editTeknisi');
-        
+    
+    //DATA KATEGORI SERVIS
+        Route::get('/service/dataServiceKategori', 'App\Http\Controllers\ServiceKategoriController@indexKategoriServis');
+        Route::patch('/service/dataServiceKategori/{dataServis}', 'App\Http\Controllers\ServiceKategoriController@editKategoriServis');
+        Route::get('/service/tambahKategoriServis', 'App\Http\Controllers\ServiceKategoriController@indexTambahServis');
+        Route::post('/service/tambahKategoriServis', 'App\Http\Controllers\ServiceKategoriController@tambahKategori')->name('prosesTambahKategori');
+
 
 
 //==========================================================================================================
