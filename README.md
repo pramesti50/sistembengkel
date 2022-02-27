@@ -1,3 +1,5 @@
+Sistem ini terdapat 2 hak akses Teknisi dan Owner. Dimana ketika diakses pertama muncul halaman login untuk Teknisi, kemudian Teknisi dapat melakukan daftar akun dan terdapat link navigasi untuk login Owner atau pemilik kendaraan setelah didaftarkan oleh Teknisi sehingga telah menjadi member.
+
 Link ERD dan State Diagram: https://drive.google.com/drive/folders/1cq528ECN-vQ64HD3un4FEsfwsvwAWSuJ?usp=sharing
 
 
