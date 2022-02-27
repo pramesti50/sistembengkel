@@ -49,6 +49,8 @@ Route::get('/', function () {
         Route::get('/service/tambahKategoriServis', 'App\Http\Controllers\ServiceKategoriController@indexTambahServis');
         Route::post('/service/tambahKategoriServis', 'App\Http\Controllers\ServiceKategoriController@tambahKategori')->name('prosesTambahKategori');
 
+    //KELOLA PERBAIKAN
+        Route::get('/kelola perbaikan/index', 'App\Http\Controllers\KelolaPerbaikanController@indexKelola');
 
 
 //==========================================================================================================
@@ -57,4 +59,8 @@ Route::get('/', function () {
         Route::get('/loginPemilik', 'App\Http\Controllers\OwnerController@loginPemilik');
         Route::post('/loginPemilik', 'App\Http\Controllers\OwnerController@prosesLoginPemilik')->name('prosesLoginPemilik');
 
+    //LOGOUT
+        Route::post('/logoutOwner', 'App\Http\Controllers\OwnerController@logoutOwner')->name('logoutOwner');
+        
+        
         Route::get('/owner', 'App\Http\Controllers\OwnerController@indexDataOwner');

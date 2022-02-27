@@ -1,5 +1,5 @@
 @extends('layout.main_teknisi')
-@section('title', 'Daftar Kategori Servis | Sistem Kendaraan')
+@section('title', 'Daftar Kategori Servis |  Sistem Servis Kendaraan')
 @section('header', 'Data Kategori Servis')
 @section('content')
     <section class="section">

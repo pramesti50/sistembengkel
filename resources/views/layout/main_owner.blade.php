@@ -57,7 +57,7 @@
 
                         <!-- <li class="sidebar-item active"> -->
                         <li class="sidebar-item">
-                            <a href="{{ url('/teknisi/beranda') }}" class='sidebar-link'>
+                            <a href="{{ url('/owner/index') }}" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Beranda</span>
                             </a>
@@ -66,39 +66,9 @@
                         
 
                         <li class="sidebar-item">
-                            <a href="{{ url('/kelola perbaikan/index') }}" class='sidebar-link'>
+                            <a href="{{ url('#') }}" class='sidebar-link'>
                                 <i class="bi bi-journal-text"></i>
-                                <span>Kelola Perbaikan Kendaraan</span>
-                            </a>
-                        </li>
-
-                        <li class="sidebar-item">
-                            <a href="{{ url('/teknisi/beranda') }}" class='sidebar-link'>
-                                <i class="bi bi-card-checklist"></i>
-                                <span>Manajemen Kerja</span>
-                            </a>
-                        </li>
-                        
-                    <li class="sidebar-title">Master Data</li>
-
-                        <li class="sidebar-item">
-                            <a href="{{ url('/teknisi/dataPemilik') }}" class='sidebar-link'>
-                                <i class="bi bi-people-fill"></i>
-                                <span>Data Pemilik Kendaraan</span>
-                            </a>
-                        </li>
-
-                        <li class="sidebar-item">
-                            <a href="{{ url('/teknisi/dataTeknisi') }}" class='sidebar-link'>
-                                <i class="bi bi-person-badge"></i>
-                                <span>Data Teknisi</span>
-                            </a>
-                        </li>
-
-                        <li class="sidebar-item">
-                            <a href="{{ url('/service/dataServiceKategori') }}" class='sidebar-link'>
-                                <i class="bi bi-gear"></i>
-                                <span>Data Service Kendaraan</span>
+                                <span>Riwayat Servis Kendaraan</span>
                             </a>
                         </li>
                     
@@ -127,8 +97,8 @@
                         <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
                             <div class="user-menu d-flex">
                                 <div class="user-name text-end me-3">
-                                    <h6 class="mb-0 text-gray-600">{{ Auth::guard('teknisi')->user()->nama }}</h6>
-                                        <p class="mb-0 text-sm text-gray-600">Teknisi</p>
+                                    <h6 class="mb-0 text-gray-600">{{ Auth::guard('owner')->user()->nama }}</h6>
+                                        <p class="mb-0 text-sm text-gray-600">Pemilik Kendaraan</p>
                                 </div>
                                         
                                 <div class="user-img d-flex align-items-center">
@@ -146,7 +116,7 @@
                             </li>
                             
                             <li>
-                            <form action="{{ route('logoutTeknisi')}}" method="POST">
+                            <form action="{{ route('logoutOwner')}}" method="POST">
                             @csrf
                             <button class="dropdown-item" type="submit">
                                 <i class="icon-mid bi bi-box-arrow-right me-2"></i> Logout</button>

@@ -51,6 +51,15 @@ class OwnerController extends Controller
         }
     }
 
+//LOGOUT 
+    public function logoutOwner(Request $request)
+    {
+        Auth::guard('owner')->logout(); 
+        Session::flush();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('prosesLoginPemilik');
+    }
 
 //BERANDA
     public function indexDataOwner()
@@ -58,4 +67,5 @@ class OwnerController extends Controller
         return view('owner/index');
     }
 
+    
 }

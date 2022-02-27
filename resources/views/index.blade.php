@@ -37,7 +37,7 @@
                             </div>
                         @endif
 
-                        @if (session('status'))
+                        @if (session('statusgagal'))
                             <div class="alert alert-danger mt-3" role="alert"><span aria-hidden="true">&times;</span>
                                 {{ session('statusgagal') }}
                             </div>

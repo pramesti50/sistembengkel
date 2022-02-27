@@ -11,4 +11,8 @@ class Teknisi extends Authenticatable
     use HasFactory;
     protected $guarded = ['id', 'status'];
 
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
+    }
 }

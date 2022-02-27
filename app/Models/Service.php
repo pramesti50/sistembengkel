@@ -10,4 +10,19 @@ class Service extends Model
     use HasFactory;
 
     protected $guarded = ['id', 'status'];
+
+    public function owner()
+    {
+        return $this->belongsTo(Owner::class);
+    }
+
+    public function kategori()
+    {
+        return $this->belongsTo(Kategori::class);
+    }
+
+    public function teknisi()
+    {
+        return $this->hasMany(Teknisi::class);
+    }
 }

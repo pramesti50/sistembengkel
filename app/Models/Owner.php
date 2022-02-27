@@ -10,4 +10,10 @@ class Owner extends Authenticatable
 {
     use HasFactory;
     protected $guarded = ['id', 'status'];
+    protected $fillable = ['nama', 'email', 'telp','password', 'alamat'];
+
+    public function service()
+    {
+        return $this->hasMany(Service::class);
+    }
 }
