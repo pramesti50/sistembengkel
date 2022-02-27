@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Teknisi;
+use App\Models\Service;
 use Auth;
 use Session;
 
@@ -131,5 +132,12 @@ class TeknisiController extends Controller
         return redirect('/teknisi/dataTeknisi')->with('status', 'Data Akun berhasil diubah');
     }
 
-
+//MANAJEMEN KERJA
+    public function indexKerja(Request $request)
+    {
+        $idteknisi = $request->session()->get('idloginteknisi');
+        $dataPerbaikan = Service::where('teknisi_id', $idteknisi)->orderBy('id', 'desc')->paginate(20);
+        
+        return view('teknisi/manajemenKerja', compact('dataPerbaikan'));
+    }
 }

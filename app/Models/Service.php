@@ -23,6 +23,6 @@ class Service extends Model
 
     public function teknisi()
     {
-        return $this->hasMany(Teknisi::class);
+        return $this->belongsTo(Teknisi::class);
     }
 }

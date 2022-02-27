@@ -73,7 +73,7 @@
                         </li>
 
                         <li class="sidebar-item">
-                            <a href="{{ url('/teknisi/beranda') }}" class='sidebar-link'>
+                            <a href="{{ url('/teknisi/manajemenKerja') }}" class='sidebar-link'>
                                 <i class="bi bi-card-checklist"></i>
                                 <span>Manajemen Kerja</span>
                             </a>

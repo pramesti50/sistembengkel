@@ -51,8 +51,11 @@ Route::get('/', function () {
 
     //KELOLA PERBAIKAN
         Route::get('/kelola perbaikan/index', 'App\Http\Controllers\KelolaPerbaikanController@indexKelola');
-
-
+        Route::post('/kelola perbaikan/index', 'App\Http\Controllers\KelolaPerbaikanController@prosesTambahService')->name('prosesTambahService');
+        Route::patch('/kelola perbaikan/index/{dataPerbaikan}', 'App\Http\Controllers\KelolaPerbaikanController@editKelolaPerbaikan');
+    
+    //MANAJEMEN KERJA
+        Route::get('/teknisi/manajemenKerja', 'App\Http\Controllers\TeknisiController@indexKerja');
 //==========================================================================================================
 //OWNER HAK AKSES
     //LOGIN

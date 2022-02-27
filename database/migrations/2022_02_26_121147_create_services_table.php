@@ -15,15 +15,15 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('teknisi_id')->nullable();
-            $table->foreignId('owner_id')->nullable();
-            $table->foreignId('kategori_id')->nullable();
+            $table->foreignId('teknisi_id');
+            $table->foreignId('owner_id');
+            $table->foreignId('kategori_id');
 
             $table->string('keluhan1');
-            $table->string('keluhan2');
+            $table->string('keluhan2')->nullable();
             $table->dateTime('waktu_mulai');
-            $table->dateTime('waktu_selesai');
-            $table->string('total_harga');
+            $table->dateTime('waktu_selesai')->nullable();
+            $table->string('total_harga')->nullable();
             $table->enum('status', ['Sedang Dikerjakan', 'Selesai'])->default('Sedang Dikerjakan');
             $table->timestamps();
         });

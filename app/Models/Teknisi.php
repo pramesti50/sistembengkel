@@ -13,6 +13,6 @@ class Teknisi extends Authenticatable
 
     public function service()
     {
-        return $this->belongsTo(Service::class);
+        return $this->hasMany(Service::class);
     }
 }

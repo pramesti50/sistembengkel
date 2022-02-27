@@ -1,22 +1,10 @@
-@extends('layout.main_owner')
-@section('title', 'Beranda Owner |  Sistem Servis Kendaraan')
+@extends('layout.main_teknisi')
+@section('title', 'Manajemen Kerja |  Sistem Servis Kendaraan')
 
 @section('content')
 
-<section class="section">
-    <div class="card">
-        <div class="card-body">
-            <div class="jumbotron jumbotron-fluid">
-                <div class="container">
-                    <h5 class="display-6">Selamat Datang, {{ Auth::guard('owner')->user()->nama }}</h5>
-                        <p class="lead" style="font-size:16px;">Solusi perbaikan kendaraan Anda</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<h5>Riwayat Servis Kendaraan Saya</h5>
+<h5>Manajemen Kerja Saya</h5>
+<h6>Teknisi: {{ Auth::guard('teknisi')->user()->nama }}</h6>
 <section class="section">
     <div class="card">
         <div class="card-body">
@@ -29,12 +17,10 @@
                                 <th>No.</th>
                                 <th>Nama Owner</th>
                                 <th>Kategori Servis</th>
-                                <th>Harga</th>
+                                <th>Keterangan 1</th>
+                                <th>Keterangan 2</th>
                                 <th>Waktu Mulai</th>
                                 <th>Status</th>
-                                <th>Waktu Selesai</th>
-                                <th>Total Harga</th>
-                                
                             </tr>
                         </thead>
 
@@ -42,10 +28,11 @@
                         @foreach( $dataPerbaikan as $semuaServis )
                             <tr>
                                 <td scope="row" style="text-align:center;"width="80px">{{ $loop->iteration }}.</td>
-                                <td width="200px">{{ $semuaServis->owner->nama }}</td>
-                                <td width="200px">{{ $semuaServis->kategori->namaservis }}</td>
-                                <td width="200px">{{ $semuaServis->kategori->harga }}</td>
-                                <td width="220px">{{ $semuaServis->waktu_mulai }}</td>
+                                <td>{{ $semuaServis->owner->nama }}</td>
+                                <td>{{ $semuaServis->kategori->namaservis }}</td>
+                                <td>{{ $semuaServis->keluhan1 }}</td>
+                                <td>{{ $semuaServis->keluhan2 }}</td>
+                                <td>{{ $semuaServis->waktu_mulai }}</td>
                                 <td style="text-align:center;" width="100px">
                                     @if ( $semuaServis->status == 'Sedang Dikerjakan')
                                         <span class="badge bg-danger" style="font-size: 12px;">Sedang Dikerjakan</span>
@@ -53,8 +40,6 @@
                                         <span class="badge bg-success" style="font-size: 12px;">Selesai</span>    
                                     @endif
                                 </td>
-                                <td width="220px">{{ $semuaServis->waktu_selesai }}</td>
-                                <td width="220px">{{ $semuaServis->total_harga }}</td>
                             
                             </tr>
                         @endforeach

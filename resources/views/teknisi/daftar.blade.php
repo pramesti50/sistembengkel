@@ -64,7 +64,7 @@
                         <div class="form-group position-relative has-icon-left mb-4">
                             <input type="text" class="form-control form-control-xl @error('alamat') is-invalid @enderror" id="alamat" name="alamat" placeholder="Alamat" value="{{ old('alamat') }}" required>
                             <div class="form-control-icon">
-                                <i class="bi bi-person"></i>
+                                <i class="bi bi-geo-alt-fill"></i>
                             </div>
                             @error('alamat') 
                             <div class="invalid-feedback">

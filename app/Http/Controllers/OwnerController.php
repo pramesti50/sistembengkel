@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Owner;
+use App\Models\Service;
 use Auth;
 use Session;
 
@@ -62,10 +63,14 @@ class OwnerController extends Controller
     }
 
 //BERANDA
-    public function indexDataOwner()
+    public function indexDataOwner(Request $request)
     {
-        return view('owner/index');
+        $idpemilik = $request->session()->get('idloginpemilik');
+        $dataPerbaikan = Service::where('owner_id', $idpemilik)->orderBy('id', 'desc')->paginate(20);
+        
+        return view('owner/index', compact('dataPerbaikan'));
     }
+
 
     
 }

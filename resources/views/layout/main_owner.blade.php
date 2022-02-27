@@ -65,12 +65,12 @@
 
                         
 
-                        <li class="sidebar-item">
+                        <!-- <li class="sidebar-item">
                             <a href="{{ url('#') }}" class='sidebar-link'>
                                 <i class="bi bi-journal-text"></i>
                                 <span>Riwayat Servis Kendaraan</span>
                             </a>
-                        </li>
+                        </li> -->
                     
                     </ul>
                 </div>
